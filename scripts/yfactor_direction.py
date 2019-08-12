@@ -39,6 +39,6 @@ logger.stop()
 input('READY COLD MEASUREMENT? PRESS ENTER!!')
 
 file_name = '/home/exito/data/logger/yfactor/cold/%s'%(args.save_name)
-logger.start(file_name)]
+logger.start(file_name)
 time.sleep(args.measure_time)
 logger.stop()
