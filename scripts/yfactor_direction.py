@@ -34,7 +34,6 @@ sis.set_v(args.sis_v)
 time.sleep(1)
 logger.start(file_name)
 time.sleep(args.measure_time)
-logger.stop()
 
 input('READY COLD MEASUREMENT? PRESS ENTER!!')
 
