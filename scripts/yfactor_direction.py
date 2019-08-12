@@ -9,13 +9,15 @@ import std_msgs.msg
 import argparse
 
 sys.path.append("/home/exito/ros/src/necst-core/scripts")
+sys.path.append("/home/exito/ros/src/necst-dsb_evaluation2019/scripts")
 
 import controller
 import core_controller
+import dsb_evaluation2019_controller
 
 rospy.init_node(name)
 
-sis = controller.sis()
+sis = dsb_evaluation2019_controller.sis()
 #loatt = controller.loatt()
 logger = core_controller.logger()
 
