@@ -30,15 +30,15 @@ args = parser.parse_args()
 input('READY HOT MEASUREMENT? PRESS ENTER!!')
 
 file_name = '/home/exito/data/logger/yfactor/hot/%s'%(args.save_name)
-logger.start(file_name)
 sis.set_v(args.sis_v)
+time.sleep(1)
+logger.start(file_name)
 time.sleep(args.measure_time)
 logger.stop()
 
 input('READY COLD MEASUREMENT? PRESS ENTER!!')
 
 file_name = '/home/exito/data/logger/yfactor/cold/%s'%(args.save_name)
-logger.start(file_name)
-sis.set_v(args.sis_v)
+logger.start(file_name)]
 time.sleep(args.measure_time)
 logger.stop()
