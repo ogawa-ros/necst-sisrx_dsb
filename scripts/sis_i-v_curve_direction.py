@@ -25,13 +25,16 @@ parser.add_argument('save_name', type = str, help = 'set saving file name')
 
 args = parser.parse_args()
 
-file_name = '/home/exito/data/logger/test/%s'%(args.save_name)
+file_name = '/home/exito/data/logger/sisiv/%s'%(args.save_name)
 print(file_name)
-logger.start(file_name)
+#logger.start(file_name)
 sis_vgap = numpy.arange(-1.2, 1.2, 0.001)
+sis.set_vgap(-1.2)
+time.sleep(2)
+logger.start(file_name)
 for vgap in sis_vgap:
     sis.set_vgap(vgap)
-    time.sleep(0.1)
+    time.sleep(0.05)
     continue
 logger.stop()
 sis.set_vgap(0)
