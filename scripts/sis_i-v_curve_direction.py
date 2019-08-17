@@ -17,7 +17,7 @@ import core_controller
 
 rospy.init_node(name)
 
-sis = dsb_evaluation2019_controller.controller.sis()
+sis = dsb_evaluation2019_controller.sis()
 logger = core_controller.logger()
 
 parser = argparse.ArgumentParser(description = 'measure SIS I-V curve only')
