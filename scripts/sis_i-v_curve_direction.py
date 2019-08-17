@@ -10,13 +10,14 @@ import numpy
 import argparse
 
 sys.path.append("/home/exito/ros/src/necst-core/scripts")
+sys.path.append("/home/exito/ros/src/necst-dsb_evaluation2019/scripts")
 
-import controller
+import dsb_evaluation2019_controller
 import core_controller
 
 rospy.init_node(name)
 
-sis = controller.sis()
+sis = dsb_evaluation2019_controller.controller.sis()
 logger = core_controller.logger()
 
 parser = argparse.ArgumentParser(description = 'measure SIS I-V curve only')
