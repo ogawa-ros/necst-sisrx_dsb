@@ -44,7 +44,7 @@ logger.stop()
 date = datetime.datetime.today().strftime('%Y%m%d')
 input('READY HOT MEASUREMENT? PRESS ENTER!!')
 
-file_name = '/home/exito/data/evaluation/' + date + '/yfactor/%s/hot'%(args.save_name)
+file_name = '/home/exito/data/evaluation/' + date + '/yfactor_with_v/%s/hot'%(args.save_name)
 sis_vgap = numpy.arange(0.7, 1.5, 0.001)
 sis.set_vgap(0.7)
 time.sleep(3)
@@ -57,7 +57,7 @@ for vgap in sis_vgap:
 
 input('READY COLD MEASUREMENT? PRESS ENTER!!')
 
-file_name = '/home/exito/data/evaluation/' + date + '/yfactor/%s/cold'%(args.save_name)
+file_name = '/home/exito/data/evaluation/' + date + '/yfactor_with_v/%s/cold'%(args.save_name)
 sis_vgap = numpy.arange(0.7, 1.5, 0.001)
 sis.set_vgap(0.7)
 time.sleep(3)
