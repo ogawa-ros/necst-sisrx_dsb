@@ -27,6 +27,7 @@ parser.add_argument('save_name', type = str, help = 'set saving file name')
 
 args = parser.parse_args()
 
+'''
 date = datetime.datetime.today().strftime('%Y%m%d')
 file_name = '/home/exito/data/evaluation/' + date + '/yfactor_with_v/hot/%s'%(args.save_name)
 
@@ -38,3 +39,30 @@ for vp in volp:             #measure y-factor
     continue
 sis.set_vgap(0)
 logger.stop()
+'''
+
+date = datetime.datetime.today().strftime('%Y%m%d')
+input('READY HOT MEASUREMENT? PRESS ENTER!!')
+
+file_name = '/home/exito/data/evaluation/' + date + '/yfactor/%s/hot'%(args.save_name)
+sis_vgap = numpy.arange(0.7, 1.5, 0.001)
+sis.set_vgap(0.7)
+time.sleep(3)
+logger.start(file_name)
+for vgap in sis_vgap:
+    sis.set_vgap(vgap)
+    time.sleep(0.03)
+    continue
+
+
+input('READY COLD MEASUREMENT? PRESS ENTER!!')
+
+file_name = '/home/exito/data/evaluation/' + date + '/yfactor/%s/cold'%(args.save_name)
+sis_vgap = numpy.arange(0.7, 1.5, 0.001)
+sis.set_vgap(0.7)
+time.sleep(3)
+logger.start(file_name)
+for vgap in sis_vgap:
+    sis.set_vgap(vgap)
+    time.sleep(0.03)
+    continue
