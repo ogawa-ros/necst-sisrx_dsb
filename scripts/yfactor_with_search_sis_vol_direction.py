@@ -27,23 +27,9 @@ parser.add_argument('save_name', type = str, help = 'set saving file name')
 
 args = parser.parse_args()
 
-'''
-date = datetime.datetime.today().strftime('%Y%m%d')
-file_name = '/home/exito/data/evaluation/' + date + '/yfactor_with_v/hot/%s'%(args.save_name)
-
-volp = np.linespace(-1, 0, 5)   #search optimal SIS voltage value
-logger.start(file_name)
-for vp in volp:             #measure y-factor
-    sis.set_vp(vp)
-    time.sleep(1)
-    continue
-sis.set_vgap(0)
-logger.stop()
-'''
 
 date = datetime.datetime.today().strftime('%Y%m%d')
 input('READY HOT MEASUREMENT? PRESS ENTER!!')
-
 file_name = '/home/exito/data/evaluation/' + date + '/yfactor_with_v/%s/hot'%(args.save_name)
 sis_vgap = numpy.arange(0, 1.3, 0.001)
 sis.set_vgap(0)
@@ -53,10 +39,9 @@ for vgap in sis_vgap:
     sis.set_vgap(vgap)
     time.sleep(0.01)
     continue
-
+logger.stop()
 
 input('READY COLD MEASUREMENT? PRESS ENTER!!')
-
 file_name = '/home/exito/data/evaluation/' + date + '/yfactor_with_v/%s/cold'%(args.save_name)
 sis_vgap = numpy.arange(0, 1.3, 0.001)
 sis.set_vgap(0)
@@ -66,3 +51,4 @@ for vgap in sis_vgap:
     sis.set_vgap(vgap)
     time.sleep(0.01)
     continue
+logger.stop()
