@@ -3,6 +3,7 @@
 name = 'sis_i_v_curve_direction'
 
 import sys
+import datetime
 import rospy
 import time
 import std_msgs.msg
@@ -26,7 +27,8 @@ parser.add_argument('save_name', type = str, help = 'set saving file name')
 
 args = parser.parse_args()
 
-file_name = '/home/exito/data/logger/sis-iv/%s'%(args.save_name)
+date = datetime.datetime.today().strftime('%Y%m%d')
+file_name = '/home/exito/data/evaluation/' + date + '/sis_iv/%s'%(args.save_name)
 print(file_name)
 #logger.start(file_name)
 sis_vgap = numpy.arange(-1.2, 1.2, 0.001)

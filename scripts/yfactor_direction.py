@@ -3,6 +3,7 @@
 name = 'measure_yfactor_direction'
 
 import sys
+import datetime
 import rospy
 import time
 import std_msgs.msg
@@ -27,9 +28,10 @@ parser.add_argument('sis_v', type = float, help = 'set sis_v')
 parser.add_argument('measure_time', type = float, help = 'set measure time')
 args = parser.parse_args()
 
+date = datetime.datetime.today().strftime('%Y%m%d')
 input('READY HOT MEASUREMENT? PRESS ENTER!!')
 
-file_name = '/home/exito/data/logger/yfactor/hot/%s'%(args.save_name)
+file_name = '/home/exito/data/evaluation/' + date + '/yfactor/%s/hot'%(args.save_name)
 sis.set_v(args.sis_v)
 time.sleep(1)
 logger.start(file_name)
@@ -38,7 +40,7 @@ logger.stop()
 
 input('READY COLD MEASUREMENT? PRESS ENTER!!')
 
-file_name = '/home/exito/data/logger/yfactor/cold/%s'%(args.save_name)
+file_name = '/home/exito/data/evaluation/' + date + '/yfactor/%s/cold'%(args.save_name)
 logger.start(file_name)
 time.sleep(args.measure_time)
 logger.stop()

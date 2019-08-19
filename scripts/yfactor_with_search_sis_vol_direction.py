@@ -3,6 +3,7 @@
 name = 'measure_yfactor_search_sis_vol_direction'
 
 import sys
+import datetime
 import rospy
 import time
 import std_msgs.msg
@@ -26,7 +27,9 @@ parser.add_argument('save_name', type = str, help = 'set saving file name')
 
 args = parser.parse_args()
 
-file_name = '/home/exito/data/logger/%s'%(args.save_name)
+date = datetime.datetime.today().strftime('%Y%m%d')
+file_name = '/home/exito/data/evaluation/' + date + '/yfactor_with_v/hot/%s'%(args.save_name)
+
 volp = np.linespace(-1, 0, 5)   #search optimal SIS voltage value
 logger.start(file_name)
 for vp in volp:             #measure y-factor
