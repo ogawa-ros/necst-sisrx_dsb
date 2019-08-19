@@ -7,7 +7,7 @@ import datetime
 import rospy
 import time
 import std_msgs.msg
-import numpy as np
+import numpy
 import argparse
 
 sys.path.append("/home/exito/ros/src/necst-core/scripts")
