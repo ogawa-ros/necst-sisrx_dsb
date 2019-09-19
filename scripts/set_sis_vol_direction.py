@@ -8,6 +8,6 @@ import controller
 rospy.init_node(name)
 sis = controller.sis()
 
-vol = input("How much Voltage??")
+vol = input("How much Voltage?? [mV] ")
 
 sis.set_vp(vol)
