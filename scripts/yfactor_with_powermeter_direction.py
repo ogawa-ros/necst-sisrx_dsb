@@ -35,6 +35,7 @@ print(file_name_cold)
 time.sleep(1)
 input('READY HOT MEASUREMENT? PRESS ENTER!!')
 sis.set_vgap(0)
+time.sleep(2)
 logger.start(file_name_hot)
 for v in vol:             #measure y-factor
     sis.set_vgap(v)
@@ -44,6 +45,7 @@ logger.stop()
 
 input('READY COLD MEASUREMENT? PRESS ENTER!!')
 sis.set_vgap(0)
+time.sleep(2)
 logger.start(file_name_cold)
 for v in vol:             #measure y-factor
     sis.set_vgap(v)
