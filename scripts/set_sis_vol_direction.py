@@ -10,4 +10,4 @@ sis = controller.sis()
 
 vol = input("How much Voltage?? [mV] ")
 
-sis.set_vp(vol)
+sis.set_vp(float(vol))
