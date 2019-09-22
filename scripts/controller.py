@@ -44,6 +44,13 @@ class sis(object):
     def __init__(self):
         self.make_pub = make_pub()
 
+    def set_v(self, command):
+        topic_name = '/necst/rx_sisdsb/v_cmd'
+        data_class = std_msgs.msg.Float64
+
+        self.make_pub.publish(topic_name, data_class, msg = command)
+        return
+
     def set_vp(self, command):
         topic_name = '/necst/rx_sisdsb/vp_cmd'
         data_class = std_msgs.msg.Float64
