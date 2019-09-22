@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-name = 'yfactor_with_v'
+name = 'yfactor_with_powermeter'
 
 import sys
 import rospy
