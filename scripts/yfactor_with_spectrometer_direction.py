@@ -21,8 +21,13 @@ sis = controller.sis()
 logger = core_controller.logger()
 
 date = datetime.datetime.today().strftime('%Y%m%d_%H%M%S')
-file_name_hot  = name + '/' + date + '/hot.necstdb'
-file_name_cold = name + '/' + date + '/cold.necstdb'
+memo = input("Input memo !! ")
+
+#file_name_hot  = name + '/' + date +"_"+ str(memo) + '/hot/' +date+'.necstdb'
+#file_name_cold = name + '/' + date +"_"+ str(memo) + '/cold/'+date+'.necstdb'
+
+file_name_hot  = name + '/' + date +"_"+ str(memo) + '/hot.necstdb'
+file_name_cold = name + '/' + date +"_"+ str(memo) + '/cold.necstdb'
 
 sis_v = input("How much voltage ? [mV]")
 sis.set_v(float(sis_v))

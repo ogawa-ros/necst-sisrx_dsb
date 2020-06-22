@@ -29,9 +29,9 @@ print(file_name)
 # set params.
 
 initial_voltage = 0.  # mV
-final_voltage   = 10. # mV
-step            = 0.1 # mV
-integ_time      = 1
+final_voltage   = 8. # mV
+step            = 0.05 # mV
+integ_time      = 0.5
 roop = int((final_voltage - initial_voltage) / step)
 
 
